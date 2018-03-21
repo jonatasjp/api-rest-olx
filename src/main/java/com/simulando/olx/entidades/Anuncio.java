@@ -3,20 +3,29 @@ package com.simulando.olx.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Data
-public class Anuncio {
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@Table(name="ANUNCIO")
+public class Anuncio extends AbstractEntity{
+
+	private static final long serialVersionUID = 1L;
+	
 	private String titulo;
 
 	private String descricao;
 
 	private Boolean ocultarTelefoneNoAnuncio;
 
-	private Categoria categoria;
-
-	private Usuario usuario;
+//	private Categoria categoria;
+//
+//	private Usuario usuario;
 
 	public static List<Anuncio> bancoDeAnuncios() {
 		
