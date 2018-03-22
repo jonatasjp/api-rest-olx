@@ -3,6 +3,7 @@ package com.simulando.olx.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -21,6 +22,7 @@ public class Anuncio extends AbstractEntity{
 
 	private String descricao;
 
+	@Column(name="ocultartelefone")
 	private Boolean ocultarTelefoneNoAnuncio;
 
 //	private Categoria categoria;
