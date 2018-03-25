@@ -35,7 +35,7 @@ public class AnunciosController {
 		return ResponseEntity.ok(anuncio);
 	}
 	
-	@GetMapping(path="/{nome}")
+	@GetMapping(path="/nome/{nome}")
 	public ResponseEntity<?> buscarAnunciosPorNome(@PathVariable String nome){
 		List<Anuncio> anuncios = anuncioService.buscarAnuncioPorNome(nome);
 		return ResponseEntity.ok(anuncios);

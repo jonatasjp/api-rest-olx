@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.simulando.olx.entidades.Anuncio;
+import com.simulando.olx.exception.ConstantesException;
+import com.simulando.olx.exception.DefaultException;
 import com.simulando.olx.repository.AnuncioRepository;
 
 @Service
@@ -23,9 +25,7 @@ public class AnuncioService {
 		Optional<Anuncio> anuncio = anuncioRepository.findById(id);
 		
 		if(!anuncio.isPresent()) {
-//			return new ResponseEntity<>(
-//					new CustomErrorType("ID inválido"), HttpStatus.NOT_FOUND);
-			throw new RuntimeException();
+			throw new DefaultException(ConstantesException.ANUNCIO_NAO_ENCONTRADO);
 		}
 		return anuncio.get();
 	}
@@ -43,6 +43,13 @@ public class AnuncioService {
 	}
 
 	public List<Anuncio> buscarAnuncioPorNome(String nome) {
+		List<Anuncio> anuncios = 
+				anuncioRepository.findByTituloIgnoreCaseContainingOrDescricaoIgnoreCaseContaining(nome, nome);
+		
+		if(anuncios == null || anuncios.isEmpty()){
+			throw new DefaultException(ConstantesException.ANUNCIO_NAO_ENCONTRADO);
+		}
+		
 		return anuncioRepository.findByTituloIgnoreCaseContainingOrDescricaoIgnoreCaseContaining(nome, nome);
 	}
 	
