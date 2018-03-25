@@ -43,7 +43,7 @@ public class AnuncioService {
 	}
 
 	public List<Anuncio> buscarAnuncioPorNome(String nome) {
-		return anuncioRepository.findByTituloContainingOrDescricaoContaining(nome, nome);
+		return anuncioRepository.findByTituloIgnoreCaseContainingOrDescricaoIgnoreCaseContaining(nome, nome);
 	}
 	
 }
