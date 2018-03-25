@@ -11,5 +11,6 @@ public class ExceptionDetail {
 	private Integer status;
 	private String titulo;
 	private String detalhe;
+	private String URL;
 
 }
