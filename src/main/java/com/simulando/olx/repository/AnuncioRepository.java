@@ -12,4 +12,5 @@ public interface AnuncioRepository extends CrudRepository<Anuncio, Long>{
 	
 	List<Anuncio> findAll();
 	
+	List<Anuncio> findByTituloIgnoreCaseContainingOrDescricaoIgnoreCaseContaining(String titulo, String descricao);
 }

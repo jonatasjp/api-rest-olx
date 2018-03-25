@@ -1,6 +1,9 @@
 package com.simulando.olx.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +34,17 @@ public class AnunciosController {
 		Anuncio anuncio = anuncioService.buscarAnuncio(id);
 		return ResponseEntity.ok(anuncio);
 	}
+	
+	@GetMapping(path="/{nome}")
+	public ResponseEntity<?> buscarAnunciosPorNome(@PathVariable String nome){
+		List<Anuncio> anuncios = anuncioService.buscarAnuncioPorNome(nome);
+		return ResponseEntity.ok(anuncios);
+	}
 
 	@PostMapping
 	public ResponseEntity<?> cadastrarAnuncio(@RequestBody Anuncio anuncio){
 		Anuncio anuncioCadastrado = anuncioService.cadastrarAnuncio(anuncio);
-		return ResponseEntity.ok(anuncioCadastrado);
+		return new ResponseEntity<>(anuncioCadastrado, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping
