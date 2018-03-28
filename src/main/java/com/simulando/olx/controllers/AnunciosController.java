@@ -2,6 +2,8 @@ package com.simulando.olx.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +44,7 @@ public class AnunciosController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> cadastrarAnuncio(@RequestBody Anuncio anuncio){
+	public ResponseEntity<?> cadastrarAnuncio(@Valid @RequestBody Anuncio anuncio){
 		Anuncio anuncioCadastrado = anuncioService.cadastrarAnuncio(anuncio);
 		return new ResponseEntity<>(anuncioCadastrado, HttpStatus.CREATED);
 	}
