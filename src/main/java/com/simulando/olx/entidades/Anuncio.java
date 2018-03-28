@@ -3,8 +3,6 @@ package com.simulando.olx.entidades;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
@@ -18,10 +16,10 @@ public class Anuncio extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotEmpty
+	@NotEmpty(message="O campo titulo é obrigatório")
 	private String titulo;
 	
-	@NotEmpty
+	@NotEmpty(message="O campo descrição é obrigatório")
 	private String descricao;
 
 	@Column(name="ocultartelefone")
