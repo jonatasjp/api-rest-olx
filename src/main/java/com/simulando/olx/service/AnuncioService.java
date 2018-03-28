@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.simulando.olx.entidades.Anuncio;
 import com.simulando.olx.exception.ConstantesException;
@@ -17,6 +18,7 @@ public class AnuncioService {
 	@Autowired
 	private AnuncioRepository anuncioRepository;
 	
+	@Transactional(rollbackFor = Exception.class)
 	public Anuncio cadastrarAnuncio(Anuncio anuncio) {
 		return anuncioRepository.save(anuncio);
 	}
@@ -38,6 +40,7 @@ public class AnuncioService {
 		anuncioRepository.deleteById(id);
 	}
 
+	@Transactional(rollbackFor = Exception.class)
 	public Anuncio atualizarAnuncio(Anuncio anuncio) {
 		return anuncioRepository.save(anuncio);
 	}

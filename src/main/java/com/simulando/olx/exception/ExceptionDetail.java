@@ -4,13 +4,11 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@Builder
-public class ExceptionDetail {
+public class ExceptionDetail extends DefaultDetail{
 
-	private Long timestamp;
-	private Integer status;
-	private String titulo;
-	private String detalhe;
-	private String URL;
+	@Builder
+	public ExceptionDetail(Long timestamp, Integer status, String titulo, String detalhe, String URL) {
+		super(timestamp, status, titulo, detalhe, URL);
+	}
 
 }
