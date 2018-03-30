@@ -16,5 +16,6 @@ public class ConstantesException {
 	public static ConstantesException ANUNCIO_NAO_ENCONTRADO = 
 			new ConstantesException("Recurso não encontrado", HttpStatus.NOT_FOUND, "ANUNCIO_NAO_ENCONTRADO");
 	
-	
+	public static ConstantesException SEXO_INVALIDO = 
+			new ConstantesException("Sexo inválido", HttpStatus.BAD_REQUEST, "SEXO_INVALIDO");
 }

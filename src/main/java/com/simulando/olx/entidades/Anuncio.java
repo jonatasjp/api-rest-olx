@@ -2,6 +2,8 @@ package com.simulando.olx.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -24,9 +26,13 @@ public class Anuncio extends AbstractEntity{
 
 	@Column(name="ocultartelefone")
 	private Boolean ocultarTelefoneNoAnuncio;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCategoria", nullable = false)
+	private Categoria categoria;
 
-//	private Categoria categoria;
-//
-//	private Usuario usuario;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario", nullable = false)
+	private Usuario usuario;
 
 }
