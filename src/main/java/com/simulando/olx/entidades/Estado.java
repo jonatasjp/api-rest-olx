@@ -1,9 +1,18 @@
 package com.simulando.olx.entidades;
 
-import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Data
-public class Estado {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name="ESTADO")
+public class Estado extends AbstractEntity{
+
+	private static final long serialVersionUID = 1L;
 
 	private String nome;
 

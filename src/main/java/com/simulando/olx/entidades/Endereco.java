@@ -1,9 +1,20 @@
 package com.simulando.olx.entidades;
 
-import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-@Data
-public class Endereco {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name="ENDERECO")
+public class Endereco extends AbstractEntity{
+
+	private static final long serialVersionUID = 1L;
 
 	private String CEP;
 
@@ -15,6 +26,8 @@ public class Endereco {
 
 	private String bairro;
 
+	@ManyToOne
+	@JoinColumn(name="idEstado")
 	private Estado estado;
 
 }

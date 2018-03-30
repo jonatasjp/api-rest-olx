@@ -22,6 +22,7 @@ public class Categoria extends AbstractEntity{
 	private String nome;
 
 	@OneToMany
+	@JoinColumn(name = "idCategoriaPai", updatable = false)
 	private List<Categoria> subCategorias;
 
 	@ManyToOne

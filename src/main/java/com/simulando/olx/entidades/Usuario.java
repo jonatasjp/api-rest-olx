@@ -5,6 +5,8 @@ import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.simulando.olx.entidadesConverter.EnumSexoConverter;
@@ -37,6 +39,8 @@ public class Usuario extends AbstractEntity{
 
 	private String telefone;
 
-//	private Endereco endereco;
+	@OneToOne
+	@JoinColumn(name="idEndereco")
+	private Endereco endereco;
 
 }
