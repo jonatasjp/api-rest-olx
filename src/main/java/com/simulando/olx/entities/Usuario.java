@@ -1,4 +1,4 @@
-package com.simulando.olx.entidades;
+package com.simulando.olx.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Convert;
@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.simulando.olx.entidadesConverter.EnumSexoConverter;
+import com.simulando.olx.entitiesConverter.EnumSexoConverter;
 
 import lombok.Getter;
 import lombok.Setter;

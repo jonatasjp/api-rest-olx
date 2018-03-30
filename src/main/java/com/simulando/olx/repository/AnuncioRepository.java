@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.simulando.olx.entidades.Anuncio;
+import com.simulando.olx.entities.Anuncio;
 
 @Repository
 public interface AnuncioRepository extends CrudRepository<Anuncio, Long>{

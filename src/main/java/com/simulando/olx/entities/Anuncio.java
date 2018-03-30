@@ -1,4 +1,4 @@
-package com.simulando.olx.entidades;
+package com.simulando.olx.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.simulando.olx.entidades;
+package com.simulando.olx.entities;
 
 import com.simulando.olx.exception.ConstantesException;
 import com.simulando.olx.exception.DefaultException;

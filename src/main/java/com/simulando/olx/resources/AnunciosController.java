@@ -1,4 +1,4 @@
-package com.simulando.olx.controllers;
+package com.simulando.olx.resources;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.simulando.olx.entidades.Anuncio;
+import com.simulando.olx.entities.Anuncio;
 import com.simulando.olx.service.AnuncioService;
 
 @RestController

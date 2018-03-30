@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.simulando.olx.entidades.Anuncio;
+import com.simulando.olx.entities.Anuncio;
 import com.simulando.olx.exception.ConstantesException;
 import com.simulando.olx.exception.DefaultException;
 import com.simulando.olx.repository.AnuncioRepository;

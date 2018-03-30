@@ -1,8 +1,8 @@
-package com.simulando.olx.entidadesConverter;
+package com.simulando.olx.entitiesConverter;
 
 import javax.persistence.AttributeConverter;
 
-import com.simulando.olx.entidades.EnumSexo;
+import com.simulando.olx.entities.EnumSexo;
 
 public class EnumSexoConverter implements AttributeConverter<EnumSexo, Character> {
 

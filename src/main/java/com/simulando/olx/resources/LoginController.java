@@ -1,4 +1,4 @@
-package com.simulando.olx.controllers;
+package com.simulando.olx.resources;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
