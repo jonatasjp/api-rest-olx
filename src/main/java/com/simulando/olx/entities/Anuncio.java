@@ -28,11 +28,11 @@ public class Anuncio extends AbstractEntity{
 	private Boolean ocultarTelefoneNoAnuncio;
 	
 	@ManyToOne
-	@JoinColumn(name = "idCategoria", nullable = false)
+	@JoinColumn(name = "idCategoria", nullable = true)
 	private Categoria categoria;
 
 	@ManyToOne
-	@JoinColumn(name = "idUsuario", nullable = false)
+	@JoinColumn(name = "idUsuario", nullable = true)
 	private Usuario usuario;
 
 }
