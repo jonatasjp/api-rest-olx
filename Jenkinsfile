@@ -9,8 +9,10 @@ pipeline {
    steps {
    
     checkout scm
-	
+    
     echo "M2_HOME = ${M2_HOME}"
+    
+    echo "PATH = ${PATH}"
 
    }
   
