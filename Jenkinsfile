@@ -8,21 +8,8 @@ pipeline {
    
    steps {
    
-    definition {
-	 cpsScm {
-      scm {
-       git {
-          remote {
-              url("https://github.com/jonatasjp/api-rest-olx")
-              branch("*/master")
-          }
-          extensions {
-              localBranch("master")
-          }
-       }
-      }
- 	 }
-    }
+    checkout scm
+    
    }
   
   }
