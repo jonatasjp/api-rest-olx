@@ -8,12 +8,18 @@ pipeline {
    
    steps {
    
-    checkout scm
+    scm {
+     git {
+        remote {
+            url("https://github.com/jonatasjp/api-rest-olx")
+            branch("*/master")
+        }
+        extensions {
+            localBranch("master")
+        }
+     }
+    }
     
-    echo "M2_HOME = ${M2_HOME}"
-    
-    echo "PATH = ${PATH}"
-
    }
   
   }
